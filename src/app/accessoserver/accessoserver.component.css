@@ -1,0 +1,107 @@
+.success{
+    position: absolute;
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 25%;
+}
+
+.warning{
+    position: absolute;
+    background-color: rgb(255, 39, 39);
+    color: white;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 25%;
+}
+
+button{
+    margin: 10px;
+}
+
+body{
+    background-image: url('./07.jpg');
+    background-size: 200em;
+    padding-bottom: 300px;
+}
+
+.icon{
+    background-image: url('./laptop.png');
+    background-repeat: no-repeat;
+    background-position: 0px 3px;
+    background-size: 50px;
+    padding: 20px;
+}
+
+.color{
+    color: aliceblue;
+}
+
+.balls{
+    border-radius: 50%;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+
+}
+
+#green {
+    background: rgb(6, 175, 6);
+    margin-left: 5%;
+}
+
+#rosso {
+    background: rgb(192, 9, 18);
+    margin-left: 5%;
+}
+
+
+.ping{
+    font-size: small;
+    display: inline;
+    margin-left: 10%;
+}
+
+#lista{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 6%;
+    width: 28%;
+}
+
+#freq{
+    position: relative;
+    margin-bottom: 5%;
+}
+
+#expansion{
+   color: red;
+}
+
+.spinner{
+    position: relative;
+    margin: 5%;
+}
+
+mat-expansion-panel {
+    width: 70%;
+}
+
+mat-panel-description{
+    margin-left: 20%;
+}
+
+.logout{
+    margin-top: 5%;
+    font-size: large;
+    height: 35%;
+    width: auto;
+}
+
+#titleserver{
+    padding-bottom: 5%;
+}
+

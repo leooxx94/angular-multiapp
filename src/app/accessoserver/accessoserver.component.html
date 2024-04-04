@@ -1,0 +1,134 @@
+<html>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <h2 id="titleserver">PANNELLO CONTROLLO SERVER</h2>
+                </div>
+                <div class="col-4">
+                    <button mat-raised-button class="logintitle" type="submit" (click)="logout()" color="warn" class="logout">LOGOUT</button>
+                </div>
+                <br><br><br><br><br>
+                <div class="col-3">
+                    <mat-form-field appearance="fill">
+                        <mat-label>SCEGLI SERVER:</mat-label>
+                        <mat-select [(ngModel)]="utente" (selectionChange)="onServerSelectionChange()" disableRipple>
+                            <mat-option value="SERVER SA">Server SA</mat-option>
+                            <mat-option value="SERVER SA 2">Server SA 2</mat-option>
+                            <mat-option value="SERVER DOCUMENTI">Documenti</mat-option>
+                            <mat-option value="POSTA">Posta</mat-option>
+                            <mat-option value="UBUNTU SERVER">Server Ubuntu</mat-option>
+                            <mat-option value="SERVERINO">Serverino</mat-option>
+                            <mat-option value="ORACLE NOSTRUM">Oracle Nostrum</mat-option>
+                            <mat-option value="OMADA">Omada Controller</mat-option>
+                            <mat-option value="IMPRESA">Impresa</mat-option>
+                            <mat-option value="AVVISI">Avvisi</mat-option>
+                            <mat-option value="ACRONIS">Acronis</mat-option>
+                            <mat-option value="UTENTE">Mio</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            
+                    <div class="col-3" id="ip">
+                        <mat-card>
+                            <mat-card-content><b>IP:</b> {{ipStr}}<mat-progress-spinner *ngIf="spinnerIp" [diameter]="20" color ="warn"mode="indeterminate" class="spinner"></mat-progress-spinner></mat-card-content>
+                        </mat-card>
+                    </div>
+
+                    <div class="col-4" id="lista">
+                        <mat-list role="list">
+                            <mat-card [(ngModel)]="utente">
+                                <mat-list-item *ngIf="sa_verde && doc_verde && mio_verde && pos_verde && ub_verde && ino_verde && oma_verde && imp_verde && avv_verde && acro_verde" role="listitem"><div class="local"><b>SERVER</b></div></mat-list-item><mat-progress-spinner *ngIf="sa_rosso || doc_rosso || mio_rosso || pos_rosso || ub_rosso || ino_rosso || oma_rosso || imp_rosso || avv_rosso || acro_rosso" [diameter]="35" color ="warn"mode="indeterminate" class="spinner"></mat-progress-spinner>
+                                <mat-list-item role="listitem">SERVER SA<div *ngIf="sa_rosso" class="balls" id="rosso"></div><div *ngIf="sa_verde" class="balls" id="green"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    SERVERINO<div *ngIf="ino_rosso" class="balls" id="rosso"></div><div *ngIf="ino_verde" class="balls" id="green"></div></mat-list-item>
+                                <mat-list-item role="listitem">DOCUMENTI<div *ngIf="doc_rosso" class="balls" id="rosso"></div><div *ngIf="doc_verde" class="balls" id="green"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    ORACLE NOSTRUM<div *ngIf="ora_rosso" class="balls" id="rosso"></div><div *ngIf="ora_verde" class="balls" id="green"></div></mat-list-item>
+                                <mat-list-item role="listitem">MIO<div *ngIf="mio_rosso" class="balls" id="rosso"></div><div *ngIf="mio_verde" class="balls" id="green"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    OMADA<div *ngIf="oma_rosso" class="balls" id="rosso"></div><div *ngIf="oma_verde" class="balls" id="green"></div></mat-list-item>
+                                <mat-list-item role="listitem">POSTA<div *ngIf="pos_rosso" class="balls" id="rosso"></div><div *ngIf="pos_verde" class="balls" id="green"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    SERVER UBUNTU<div *ngIf="ub_rosso" class="balls" id="rosso"></div><div *ngIf="ub_verde" class="balls" id="green"></div></mat-list-item>
+                                <mat-list-item role="listitem">IMPRESA<div *ngIf="imp_rosso" class="balls" id="rosso"></div><div *ngIf="imp_verde" class="balls" id="green"></div>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    AVVISI<div *ngIf="avv_rosso" class="balls" id="rosso"></div><div *ngIf="avv_verde" class="balls" id="green"></div></mat-list-item>
+                                <mat-list-item role="listitem">Acronis<div *ngIf="acro_rosso" class="balls" id="rosso"></div><div *ngIf="acro_verde" class="balls" id="green"></div></mat-list-item>
+                            </mat-card>                            
+                        </mat-list>
+                        
+                    </div>
+                
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col3" id="freq">
+                    <mat-form-field appearance="fill">
+                    <mat-label>FREQUENZA CAMBIO PASSWORD:</mat-label>
+                    <mat-select [(ngModel)]="scadenza" disableRipple>
+                        <mat-option value="1">1 MESE</mat-option>
+                        <mat-option value="3">3 MESI</mat-option>
+                        <mat-option value="6">6 MESI</mat-option>
+                        <mat-option value="12">12 MESI</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col3">
+                    <button mat-raised-button (click)="tempo(scadenza)">IMPOSTA FREQUENZA CAMBIO PASSWORD</button>
+                    <button mat-raised-button color="warn" (click)="passOra(utente)">CAMBIA PASSWORD ORA</button>
+                </div>
+                
+            </div>
+
+        </div>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col3">
+                    <button mat-raised-button (click)="rdp(utente)" class="icon">DESKTOP REMOTO</button>
+                    <button mat-raised-button (click)="recuperaPass(utente)" class="icon">RECUPERA PASS</button>
+                </div>
+            </div>
+            <br>
+            
+            <br><br>
+                    <ngb-toast
+                        *ngIf="success"
+                        [delay]="3000"
+                        [autohide]="autohide"
+                        [class.bg-warning]="false"
+                        class="success"><h3>PASSWORD CAMBIATA</h3>
+                    </ngb-toast>
+                    <ngb-toast
+                        *ngIf="error"
+                        [delay]="3000"
+                        [autohide]="autohide"
+                        [class.bg-warning]="false"
+                        class="warning"><h3>ERRORE NEL CAMBIO PASSWORD</h3>
+                    </ngb-toast>
+                    <ngb-toast
+                        *ngIf="vuoto"
+                        [delay]="3000"
+                        [autohide]="autohide"
+                        [class.bg-warning]="false"
+                        class="warning"><h3>CAMPI VUOTI</h3>
+                    </ngb-toast>
+                    <ngb-toast
+                        *ngIf="notreach"
+                        [delay]="6000"
+                        [autohide]="autohide"
+                        [class.bg-warning]="false"
+                        class="warning"><h3>SERVER NON RAGGIUNGIBILE</h3>
+                    </ngb-toast>
+                    <ngb-toast
+                        *ngIf="tiempo"
+                        [delay]="7500"
+                        [autohide]="autohide"
+                        [class.bg-warning]="false"
+                        class="success"><h3>FREQUENZA IMPOSTATA A {{scadenza}} MESI<br>DATA PROSSIMA SCADENZA: {{tiempoStr}}</h3>
+                    </ngb-toast>
+        </div>
+    </body>
+</html>

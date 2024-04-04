@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+/*@import "~bootstrap/dist/css/bootstrap.css"*/
+
+
+@font-face {
+    font-family: "RivalBlack";
+    src: local("RivalBlack"), url(./assets/fonts/rival-black.otf) format("opentype");
+}
+
+h2{
+    padding-top: 15px;
+    font-family: "RivalBlack";
+    color: #6faa44;
+    text-shadow: 2px 2px #313131;
+}
+
+#close{
+    border-radius: 15px;
+    border-color:rgb(255, 255, 255);
+    font-size: large;
+    border-width: 0.15em;
+}
+
+#close:hover{
+    background-color: orangered;
+}
+
+#aggiorna{
+    border-radius: 15px;
+    border-color:rgb(255, 255, 255);
+    font-size: large;
+    border-width: 0.15em;
+}
+
+#aggiorna:hover{
+    background-color: blanchedalmond;
+}
+
+#send{
+    border-radius: 15px;
+    border-color:rgb(255, 255, 255);
+    font-size: large;
+    border-width: 0.15em;
+}
+
+#send:hover{
+    background-color: #6faa44;
+}
+
+.card img{
+    max-width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#wetransfer{
+    border-radius: 15px;
+    border-color:rgb(255, 255, 255);
+    font-size: large;
+    border-width: 0.15em;
+}
+

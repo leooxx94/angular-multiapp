@@ -1,0 +1,93 @@
+pdf-viewer{
+    width: 800px;
+    height: 1000px;
+}
+
+#alert{
+    z-index: 10000;
+    text-align: center;
+}
+
+#creapdf{
+    background-color: orange;
+    border-color: orange;
+    border-width: 0.12em;
+    border-color: white;
+}
+
+#creapdf:hover{
+    background-color: red;
+}
+
+.fotofatta{
+    position: absolute;
+    background-color: green;
+    color: white;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 25%;
+}
+
+.warn{
+    position: absolute;
+    background-color: rgb(255, 51, 0);
+    color: white;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 25%;
+}
+
+.succ{
+    position: absolute;
+    background-color: rgb(12, 156, 12);
+    color: white;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: auto;
+    margin-bottom: 25%;
+}
+
+body{
+    width: 100%;
+    height: 250%;
+    background-image: url('./12.jpg');
+    background-size: 200em;
+    background-repeat: no-repeat;
+    padding-bottom: 300px;
+}
+
+.msg{
+    color: white;
+    font-size: large;
+}
+
+h4{
+    color: white;
+}
+
+.scanner{
+    text-shadow: 2px 2px black;
+}
+
+.spinner{
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    margin-top: 250px;
+}
+
+.loading{
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-decoration: dashed;
+}
+
+.hide-app {
+    display: none;
+}
+

@@ -1,0 +1,49 @@
+.container{
+    padding-top: 30px;
+}
+
+.card{
+    padding-top: 30px;
+}
+
+.card:hover{
+    background-color: #6faa44;
+    border-color: lightgrey;
+    color: white;
+    transition: all 0.2s ease-in-out
+}
+
+.card img{
+    margin-inline: 70px;
+    width: 50%;
+    height: auto;
+    align-items: center;
+}
+
+.card-text{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    margin-inline: 30px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+h1{
+    padding-bottom: 30px;
+    font-family: "RivalBlack";
+    color: #6faa44;
+}
+
+button{
+    padding: 25px;
+    border: none;
+    background: none;
+}
+
+.container{
+
+}
+
+#componentContainer{
+    margin-bottom: 1000px;
+}

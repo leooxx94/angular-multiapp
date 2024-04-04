@@ -1,0 +1,67 @@
+h6{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(36, 36, 36);
+}
+
+#addcassonicomponent{
+    padding-top: 1%;
+    padding-bottom: 2%;
+}
+
+h3{
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px rgb(36, 36, 36);
+}
+
+.addcass{
+    position: absolute;
+    margin-left: 50%;
+    margin-top: 4.2%;
+    height: 45px;
+    width: 45px;
+    z-index: 999;
+}
+
+.delcass{
+    position: absolute;
+    margin-left: 54%;
+    margin-top: 4.2%;
+    height: 45px;
+    width: 45px;
+    z-index: 999;
+}
+
+
+.size-save{
+    font-size: 22px;
+    color: #444444;
+}
+
+.size-del{
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.addcass.mat-grey{
+    background-color: rgb(255, 255, 255);
+}
+
+.delcass.mat-dark{
+    background-color: rgb(65, 65, 65);
+}
+
+.green{
+    text-align: center;
+    color: green;
+}
+
+.warn{
+    text-align: center;
+    color: rgb(189, 0, 0);
+}
+
+#toast{
+    position: absolute;
+    padding-left: 300px;
+    z-index: 9990;
+}

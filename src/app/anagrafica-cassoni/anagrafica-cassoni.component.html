@@ -1,0 +1,80 @@
+<div class="container" id="addcassonicomponent">
+    <div class="row">
+
+        <!--TOAST SUCCESSO-->
+
+        <div class="col-6" id="toast">
+            <br>
+            <ngb-toast
+                *ngIf="showToast"
+                [delay]="3000"
+                class="green"><h4>CASSONE SALVATO</h4>
+            </ngb-toast>
+        </div>
+
+        <!--TOAST INSUCCESSO-->
+
+        <div class="col-6" id="toast">
+            <br>
+            <ngb-toast
+                *ngIf="showToastMissCass"
+                [delay]="3000"
+                class="warn"><h4>MANCA IL CASSONE</h4>
+            </ngb-toast>
+        </div>
+
+        <!--TOAST ERRORE-->
+
+        <div class="col-6" id="toast">
+            <br>
+            <ngb-toast
+                *ngIf="showToastError"
+                [delay]="3000"
+                class="warn"><h4>ERRORE</h4>
+            </ngb-toast>
+        </div>
+
+        <h3>AGGIUNGI CASSONE</h3>
+        <br><br>
+        <div class="col-2">
+            <h6>CASSONE</h6>
+            <mat-form-field class="text">
+            <mat-label>CASSONE:</mat-label>
+            <input matInput placeholder="Es. 250" [(ngModel)]="cassoneValue">
+            </mat-form-field>
+        </div>
+
+        <div class="col-2">
+            <h6>TIPO</h6>
+            <mat-form-field class="text">
+                <mat-label>TIPO:</mat-label>
+                <input matInput placeholder="Es. Cassone" [(ngModel)]="tipoValue">
+            </mat-form-field>
+        </div>
+
+        <div class="col-2">
+            <h6>DESCRIZIONE</h6>
+            <mat-form-field class="text">
+            <mat-label>DESCRIZIONE:</mat-label>
+            <input matInput placeholder="Es. Cielo Aperto" [(ngModel)]="descValue">
+            </mat-form-field>
+        </div>
+
+        <div class="col-2">
+            <h6>NOTE</h6>
+            <mat-form-field class="text">
+                <mat-label>NOTE:</mat-label>
+                <input matInput placeholder="" [(ngModel)]="noteValue">
+            </mat-form-field>
+        </div>
+
+        <button class="addcass" mat-fab color="grey" (click)="salvaArray()">
+            <mat-icon class="size-save">save</mat-icon>
+        </button>
+
+        <button class="delcass" mat-fab color="dark" (click)="delArray()">
+            <mat-icon class="size-del">delete</mat-icon>
+        </button>
+
+    </div>
+</div>

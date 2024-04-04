@@ -1,0 +1,116 @@
+<div>
+<html>
+  <mat-progress-spinner *ngIf="isLoading" [diameter]="100" color="warn" mode="indeterminate" class="loading"></mat-progress-spinner>
+  <body>
+    
+    <div class="container">
+      <div class="row">
+        
+        <h2>INVIO QUARTECOPIE</h2>
+        <br><br><br><br><br>
+        
+        <ngb-toast
+            *ngIf="warning"
+            [delay]="5000"
+            [autohide]="autohide"
+            [class.bg-warning]="!autohide"
+          class="warn"><h3>INVIO NON RIUSCITO!</h3>
+          </ngb-toast>
+
+          <ngb-toast
+          *ngIf="success"
+          [delay]="3000"
+          [autohide]="autohide"
+          [class.bg-warning]="!autohide"
+        class="succ"><h3>EMAIL INVIATA</h3>
+        </ngb-toast>
+
+        <div class="col">
+          <form class="form-floating">
+            <input list="mittenti" autocomplete="off" type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" [(ngModel)]="account.mitemail" [ngModelOptions]="{standalone: true}">
+            <label for="floatingInputValue">Mittente: </label>
+          </form>
+          <datalist id="mittenti">
+            <option value="l.fedi@dife.it">
+            <option value="formulari@dife.it">
+            <option value="a.pacini@dife.it">
+          </datalist>
+        </div>
+        <div class="col">
+          <form class="form-floating">
+            <input list="dest" autocomplete="off" type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" [(ngModel)]="account.destemail" [ngModelOptions]="{standalone: true}">
+            <label for="floatingInputValue">Destinatario: </label>         
+          </form>
+          <datalist id="dest">
+            <option value="l.fedi@dife.it">
+            <option value="formulari@dife.it">
+            <option value="a.pacini@dife.it">
+          </datalist>
+        </div>
+          
+      </div>
+      <br>
+        <div class="col">
+          <form class="form-floating">
+            <input autocomplete="off" type="email" class="form-control" id="floatingInputValue" placeholder="name@example.com" [(ngModel)]="account.sbj" [ngModelOptions]="{standalone: true}">
+            <label for="floatingInputValue">Oggetto: </label>
+          </form>
+        </div>
+      
+        <br>
+        
+        
+        <form class="form-group">
+          <label for="exampleFormControlTextarea1" class="msg">Messaggio:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="account.msg" [ngModelOptions]="{standalone: true}"></textarea>
+          
+        </form>
+        <br>
+      <div class="row">
+        <div class="col-sm-1">
+          <button type="button" class="btn btn-primary btn-lg" id="send" (click)="send()">Invia</button>
+        </div>
+        <div class="col-sm-1 offset-sm-2">
+          <button type="button" class="btn btn-dark btn-lg" id="close" (click)="close()">Aggiorna</button>
+        </div>
+        <div class="col-sm-1 offset-sm-2">
+          <button type="button" class="btn btn-danger btn-lg" id="creapdf" (click)="creaPdf()">CREA PDF</button>
+        </div>
+        <div class="col-sm-1 offset-sm-2">
+          <button type="button" class="btn btn-danger btn-lg" id="wetransfer" onclick="window.open('https://wetransfer.com/')">WE TRANSFER</button>
+        </div>
+
+      </div>
+      <br><br><br>
+
+          <ngb-toast
+            *ngIf="foto"
+            [delay]="3000"
+            [autohide]="autohide"
+            [class.bg-warning]="!autohide"
+          class="fotofatta"><h3>FOTO FATTA</h3>
+          </ngb-toast>
+
+      <h4 class="scanner">DOCUMENTO SCANNER</h4>
+      <br><br>
+      <mat-progress-spinner *ngIf="showSpinner" [diameter]="90" mode="indeterminate" class="spinner"></mat-progress-spinner>
+      <div class="container text-center">
+        <div class="row align-items-start">
+          <div class="pdf-container">
+            <pdf-viewer *ngIf="showPdf" [src]="byteArray"
+                      [render-text]="true"
+                      [original-size]="false"
+                      [stick-to-page]="true"
+                      [fit-to-page]="false"
+            >  </pdf-viewer>
+          </div>
+        </div>
+      
+      </div>
+      
+    </div>
+  
+  </body>
+
+</html>
+</div>
