@@ -3,11 +3,8 @@
 Web application that uses the Angular framework.
 Designed so that from the initial menu you can launch several applications.
 
-The entire backend part is missing, which I haven't uploaded to Github, along with several missing modules and assets. If you try to run it as it is, it won't work.
+The entire backend part is missing, along with several missing modules and assets.
 
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
 
 ## Development server
 
